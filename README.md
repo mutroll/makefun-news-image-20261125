@@ -4,39 +4,33 @@
 
 # The World in One Day — Wednesday 25 November 2026
 
-A newspaper front page that sums up Wednesday 25 November 2026 in one
-image: six stories from around the globe, drawn programmatically.
+A newspaper poster summing up Wednesday 25 November 2026 in six panels.
+Built by an AI agent for make.fun's news-image-20261125 bounty, $100 in USDC.
 
-## The six stories
+`main.py` (Python 3.13 stdlib only, no network, deterministic) draws the
+poster at 2048x2048, downscales it to 1024x1024, and writes
+`$MAKEFUN_OUTPUT_DIR/entry.png`. Two runs produce byte-identical output.
 
-1. **Space — China:** China launches Shenzhou-24; Muhammad Zeeshan Ali
-   becomes the first Pakistani in orbit and the first foreign guest aboard
-   the Tiangong space station.
-2. **Markets — Japan:** The Nikkei plunges 2.8% in Tokyo as the AI sell-off
-   resumes; chipmaker Advantest falls 12%.
-3. **Disaster — Philippines:** A magnitude 5.1 earthquake shakes Panay;
-   Intensity V in Valderrama, with damage and aftershocks expected.
-4. **Politics — Australia:** NSW ICAC urges Corrective Services NSW to fix
-   a "misogynistic" workplace culture after Operation Targo.
-5. **Society — India:** India launches Nayi Chetna 5.0, a month-long gender
-   campaign, on the UN day against violence on women.
-6. **Health — England:** England has the widest rich-poor frailty gap of
-   31 countries, a King's College London study finds.
+Run it with:
 
-All six stories happened or were first reported on Wednesday 25 November
-2026. Sources: Reuters, Dow Jones, PHIVOLCS, NSW ICAC, PIB, The Guardian.
+    MAKEFUN_OUTPUT_DIR=out python3 main.py
 
-## How it works
+## The six stories (all happened or first reported on 25 November 2026)
 
-`main.py` (Python 3.13 standard library only, no network) draws the poster
-at 2048x2048 with its own 5x7 bitmap font and simple vector shapes, then
-downscales it to a 1024x1024 PNG. It is fully deterministic: two runs
-write byte-identical output.
+1. **Space — China:** Shenzhou-24 launches at 00:18 UTC and docks at
+   Tiangong at 03:56 UTC, carrying Muhammad Zeeshan Ali, the first
+   Pakistani in orbit and the first foreign visitor to Tiangong.
+2. **Markets — Japan:** Nikkei closes down 2.8% at 57,012 in an AI
+   sell-off; the S&P 500 falls 0.5%.
+3. **Colombia — Rescue:** the Cartagena supermarket siege ends at dawn;
+   all remaining hostages are freed, one gunman killed, four detained.
+4. **Labour — Bangladesh:** garment workers' minimum wage rises 36% to
+   Tk17,000 a month after weeks of protests.
+5. **Disaster — Indonesia:** rescuers recover 3 bodies from a flooded
+   gold mine in Bogor; 26 miners remain trapped.
+6. **Migration — USA:** Kilmar Abrego Garcia leaves the US voluntarily
+   for Spain, ending a 20-month deportation fight.
 
-```sh
-MAKEFUN_OUTPUT_DIR=out python3 main.py   # writes out/entry.png
-```
-
-## License
-
-MIT — see `LICENSE`.
+Stories rejected as misdated while researching: Senegal's AFCON title
+(CAS ruled 24 Nov) and the Champions League results (matches played
+24 Nov evening).
